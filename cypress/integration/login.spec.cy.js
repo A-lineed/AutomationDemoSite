@@ -22,7 +22,7 @@ describe('Login', () => {
         cy.get('#errormsg').should('contain', 'Invalid User Name or PassWord')
     })
 
-    it('Tentativa de login sem preencher os campos', () => {
+    it('Tenta fazzer o login sem preencher os campos', () => {
         cy.get('#btn1').click()
         cy.title('be.equal', ' SignIn')
         cy.get('input[type="Text"][ng-model="Email"]').invoke('val', '')
