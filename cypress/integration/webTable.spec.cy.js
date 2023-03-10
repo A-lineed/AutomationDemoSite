@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Login', () => {
+describe('WebTable', () => {
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false;
     });
