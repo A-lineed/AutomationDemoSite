@@ -19,6 +19,16 @@ describe('Login', () => {
         cy.get('input[type="Text"][ng-model="Email"]').type('aline@gmail.com')
         cy.get('input[type="Password"][ng-model="Password"]').type('1234')
         cy.get('#enterbtn').click()
+        cy.get('#errormsg').should('contain', 'Invalid User Name or PassWord')
+    })
+
+    it('Tentativa de login sem preencher os campos', () => {
+        cy.get('#btn1').click()
+        cy.title('be.equal', ' SignIn')
+        cy.get('input[type="Text"][ng-model="Email"]').invoke('val', '')
+        cy.get('input[type="Password"][ng-model="Password"]').invoke('val', '')
+        cy.get('#enterbtn').click()
         cy.get('#errormsg').should('exist')
+        cy.get('#errormsg').should('contain', 'Invalid User Name or PassWord')
     })
 })
