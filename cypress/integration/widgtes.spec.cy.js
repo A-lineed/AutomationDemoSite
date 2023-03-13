@@ -29,7 +29,7 @@ describe('Widgtes', () => {
     })
 
 })
-describe.only('AutoComplete', () => {
+describe('AutoComplete', () => {
 
     Cypress.on('uncaught:exception', (err, runnable) => {
         return false;
@@ -40,7 +40,7 @@ describe.only('AutoComplete', () => {
         cy.get(':nth-child(5) > .dropdown-menu > :nth-child(2) > a').click()
     })
 
-    it('Expande o grupo recolhivel 1', () => {
+    it('Testa funcionalidade de autocomplete', () => {
         cy.get('#searchbox')
             .type('Brazil{downArrow}{enter}', { delay: 100 })
     })
