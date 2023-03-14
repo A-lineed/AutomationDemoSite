@@ -1,10 +1,6 @@
 /// <reference types="Cypress" />
 
 describe('WebTable', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
-
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/Register.html')
     })

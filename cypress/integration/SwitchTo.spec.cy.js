@@ -1,10 +1,6 @@
 /// <reference types="Cypress" />
 
 describe('Alerts', () => {
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
-
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/Register.html')
         cy.get(':nth-child(4) > .dropdown-menu > :nth-child(1) > a').click()
