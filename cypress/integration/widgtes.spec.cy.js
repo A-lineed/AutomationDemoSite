@@ -1,11 +1,6 @@
 /// <reference types="Cypress" />
 
 describe('Widgtes', () => {
-
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
-
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/Register.html')
         cy.get(':nth-child(5) > .dropdown-menu > :nth-child(1) > a').click()
@@ -31,10 +26,6 @@ describe('Widgtes', () => {
 })
 describe('AutoComplete', () => {
 
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
-
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/Register.html')
         cy.get(':nth-child(5) > .dropdown-menu > :nth-child(2) > a').click()
@@ -47,17 +38,20 @@ describe('AutoComplete', () => {
 })
 
 describe.only('Datepicker', () => {
-
-    Cypress.on('uncaught:exception', (err, runnable) => {
-        return false;
-    });
-
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/Register.html')
         cy.get(':nth-child(5) > .dropdown-menu > :nth-child(3) > a').click()
     })
 
-    it('', () => {
-    
+    it('Open date picker', () => {
+        cy.get('input#datepicker1').click()
+        cy.get('div#ui-datepicker-div').should('be.visible');
+    })
+
+    it.only('Select date', () => {
+        cy.get('input#datepicker1').click()
+        cy.selectYear(2022)
+        cy.selectMonth('January')
+        cy.selectDay(17)
     })
 })
