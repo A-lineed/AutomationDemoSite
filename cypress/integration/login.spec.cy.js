@@ -8,12 +8,12 @@ describe('Login', () => {
     beforeEach(() => {
         cy.visit('https://demo.automationtesting.in/')
     })
-    it('Pular login', () => {
+    it('Skip login', () => {
         cy.get('#btn2').click()
         cy.title('be.equal', ' Register')
     })
 
-    it('Realiza login com usuário inválido', () => {
+    it('Login with invalid user', () => {
         cy.get('#btn1').click()
         cy.title('be.equal', ' SignIn')
         cy.get('input[type="Text"][ng-model="Email"]').type('aline@gmail.com')
@@ -22,7 +22,7 @@ describe('Login', () => {
         cy.get('#errormsg').should('contain', 'Invalid User Name or PassWord')
     })
 
-    it('Tenta fazzer o login sem preencher os campos', () => {
+    it('Try to login without filling in the fields', () => {
         cy.get('#btn1').click()
         cy.title('be.equal', ' SignIn')
         cy.get('input[type="Text"][ng-model="Email"]').invoke('val', '')

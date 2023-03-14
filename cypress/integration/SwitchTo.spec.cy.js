@@ -10,7 +10,7 @@ describe('Alerts', () => {
         cy.get(':nth-child(4) > .dropdown-menu > :nth-child(1) > a').click()
     })
 
-    it('Valida um alert simples', () => {
+    it('Validates a simple alert', () => {
         cy.get('.active > .analystic').click()
         cy.get('#OKTab > .btn').click()
         cy.on('window:alert', alert => {
@@ -18,7 +18,7 @@ describe('Alerts', () => {
         })
     })
 
-    it('Valida alert com confirmação', () => {
+    it('Validate alert with confirmation', () => {
         cy.get(':nth-child(2) > .analystic').click()
         cy.get('#CancelTab > .btn').click()
         cy.on('window:confirm', confirm => {

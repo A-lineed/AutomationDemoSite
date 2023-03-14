@@ -10,7 +10,7 @@ describe('Home', () => {
         cy.visit('https://demo.automationtesting.in/')
     })
 
-    it.only('Preenche os campos e realiza o cadastro', () => {
+    it('Fill in the fields and register', () => {
         cy.get('#email').type('alineedvania2018@outlook.com')
         cy.get('#enterimg').click()
         cy.get('input[type="text"][ng-model="FirstName"').type('Aline Edvania')
